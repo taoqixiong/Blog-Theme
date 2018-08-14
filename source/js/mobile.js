@@ -52,7 +52,7 @@ define([], function(){
         document.getElementsByTagName("body")[0].appendChild($viewer);
         var wrap = document.getElementById("viewer-box");
         basicwrap = wrap;
-        wrap.style.height = document.body.scrollHeight + 'px';
+        wrap.style.height = document.documentElement.scrollHeight + 'px';
     };
 
     var show = function(target, idx){
