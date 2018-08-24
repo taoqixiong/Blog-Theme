@@ -83,6 +83,11 @@ require([], function (){
         })
     }
 
+    // Hide Comments
+    if(!!yiliaConfig.comments){
+        document.getElementById("comments").className += "hide";
+    }
+    
     // Animate on Homepage
     if(!!yiliaConfig.animate) {
         if(!!yiliaConfig.isHome) {
