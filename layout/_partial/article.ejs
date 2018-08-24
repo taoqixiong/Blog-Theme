@@ -63,17 +63,32 @@
 <% } %>
 
 <% if (!index && post.comments){ %>
-    if (theme.youyan.on) { %>
-        <%- partial('comments/youyan') %>
-    <% } else if (theme.disqus.on) { %>
-        <%- partial('comments/disqus', {
-            shortname: theme.disqus.shortname
-          }) %>
-    <% } else if (config.disqus_shortname) { %>
-        <%- partial('comments/disqus', {
-            shortname: config.disqus_shortname
-          }) %>
-    <% } %>
+  <% if(theme.comment.use === 'disqus') { %>
+    <%- partial('comments/disqus', {
+      shortname: theme.disqus.shortname
+    }) %>
+  <% } %>
+  <% if(theme.comment.use === 'youyan') { %>
+    <%- partial('comments/youyan') %>
+  <% } %>
+  <% if(theme.comment.use === 'disqus_proxy') { %>
+    <%- partial('comments/disqus_proxy', {
+      shortname: theme.disqus_proxy.shortname,
+      api: theme.disqus_proxy.api,
+      site: theme.disqus_proxy.site,
+      mode: theme.disqus_proxy.mode,
+      timeout: theme.disqus_proxy.timeout,
+    }) %>
+  <% } %>
+    <% if(theme.comment.use === 'valine') { %>
+    <%- partial('comments/valine', {
+      app_id: theme.valine.app_id,
+      app_key: theme.valine.app_key,
+      notify: theme.valine.notify,
+      verify: theme.valine.verify,
+      placeholder: theme.valine.placeholder,
+    }) %>
+  <% } %>
 <% } %>
 
 <%- partial('_partial/post-nav-button') %>
