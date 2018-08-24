@@ -1,0 +1,34 @@
+<section id="comments">
+    <link rel="stylesheet" href="<%-config.root%>css/iDisqus.min.css" />
+    <script src="<%-config.root%>js/iDisqus.min.js"></script>
+    <div id="comment"></div>
+	<script>
+		var disq = new iDisqus('comment', {
+			forum: '<%= shortname %>',
+			api: '<%= api %>',
+			site: '<%= site %>',
+			url: '<%= page.permalink %>',
+			identifier: '<%= page.path %>',
+			mode: <%= mode %>,
+			timeout: <%= timeout %>,
+			init: true
+		});
+	</script>
+    <%- partial('click2show') %>
+</section>
+
+<% if (!theme.comment.preload) { %>
+    <script id="dsq-count-scr" src="//<%= shortname%>.disqus.com/count.js" async></script>
+    <span class="disqus-comment-count" data-disqus-identifier="<%= page.path %>"></span>
+    <span class="disqus-comment-count" data-disqus-url="<%= page.permalink %>"></span>
+    <script>
+        $(".disqus-comment-count").hide();
+        var $disqusCount = $(".disqus-comment-count");
+        $disqusCount.bind("DOMNodeInserted", function(e) {
+            $(".count-comment").text(
+                $(this).text().replace(/[^0-9]/ig,"")
+            )
+            DISQUSWIDGETS.getCount({reset: true});
+        })
+    </script>
+<% } %>

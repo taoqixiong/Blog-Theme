@@ -80,6 +80,9 @@
 
 <% if (!index) { %>
     <script>
+    		<% if (post.comments === false){ %>
+            yiliaConfig.comments = false;
+        <% } %>
         <% if (post.fancybox === false){ %>
             yiliaConfig.fancybox = false;
         <% } %>

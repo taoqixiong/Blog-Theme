@@ -80,14 +80,16 @@ subnav:
 # >>> Conments 评论系统 <<<
 # Chose ONE as your comment system and keep others disable.
 # 选一个作为网站评论系统，其他保持禁用。
-
-preload_comment: true
-## false: 当点击评论条等区域时再加载评论模块
-## false: load comment's section until u click/hover on the bar/icon
-
-show_count: false
-## 是否在主页文章标题旁显示评论数（多说、Disqus）
-## Add comment count after article title
+comment:
+  use: disqus
+  ## 选一个作为网站评论系统，其他保持禁用。
+  ## 可选的评论系统：disqus, youyan, disqus_proxy, valine。
+  preload_comment: true
+  ## false: 当点击评论条等区域时再加载评论模块
+  ## false: load comment's section until u click/hover on the bar/icon
+  show_count: false
+  ## 是否在主页文章标题旁显示评论数（多说、Disqus）
+  ## Add comment count after article title
 
 disqus: 
   #on: true
@@ -96,6 +98,36 @@ disqus:
   # It is unnecessary to enable disqus here if 
   # you have set "disqus_shortname" in your site's "_config.yml" 
 
+disqus_proxy:
+  shortname: 
+  api: 
+  site: 
+  mode: 1
+  timeout: 3000
+  # 源代码：https://github.com/fooleap/disqus-php-api
+  # shortname 为 disqus 的 shortname
+  # api 后端 api 网址
+  # site 网站域名
+  # mode 评论框加载模式
+  ## "1": 检测能否访问 Disqus，若能则加载 Disqus 原生评论框，超时则加载简易评论框
+  ## "2": 仅加载简易评论框
+  ## "3": 同时加载两种评论框，先显示简易评论框，Disqus 加载完成则切换至 Disqus 评论框
+  # timeout 检测 disqus 超时时间
+  # 其他相关设置源码说明里面有
+
+valine:
+  notify: true
+  verify: false
+  app_id: 
+  app_key: 
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+  # 服务端搭建教程：https://panjunwen.com/diy-a-comment-system/
+  # notify 评论回复邮件提醒
+  # verify 验证码服务
+  # APP ID 设置 leancloud 应用的 APP ID
+  # APP KEY 设置 leancloud 应用的 APP KEY
+  # placeholder 设置留言框占位提示文字
+ 
 youyan:
   #on: true
   id: 
@@ -241,7 +273,7 @@ share:
   on: true
   baidu: true
   addthis: false
-  addthis_pubid: "ra-56ff76c972fc0cf9"
+  addthis_pubid: ""
   ## Go to www.addthis.com/dashboard to get your pubid (in src of Code)
   ## and customize AddThis share buttons
 
