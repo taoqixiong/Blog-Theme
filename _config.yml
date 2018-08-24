@@ -293,6 +293,7 @@ baidu_tongji:
 # http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:
   on: true
+  load: true
   site_visit: true
   page_visit: true
 
