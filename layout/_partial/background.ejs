@@ -8,6 +8,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
+				if(theme.load_webp === true) {
 				var hasWebP = (function() {
 					var images = {
 						basic: "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoCAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==",
@@ -35,6 +36,12 @@
 					var backgroundimg = "url(<%- theme.root_url %>/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
 					$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
 				});
+				}
+				else {
+					var backgroundnum = <%= theme.background_image %>;
+                	var backgroundimg = "url(<%- theme.root_url %>/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+               	 	$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+				}
             }
         })
     </script>
