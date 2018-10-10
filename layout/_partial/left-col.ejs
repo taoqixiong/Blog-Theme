@@ -12,7 +12,7 @@
         <p class="header-subtitle"><%=theme.subtitle%></p>
         <%}%>
 
-        <% if (theme.search.on){ %>
+        <% if (theme.search.on === true){ %>
             <form id="search-form">
             <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="<%= theme.search.onload %>" />
             <i class="fa fa-times" onclick="resetSearch()"></i>

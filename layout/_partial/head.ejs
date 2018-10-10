@@ -37,7 +37,7 @@
     <link href="<%- theme.CDN.fancybox_css %>" rel="stylesheet">
 <% } %>
 
-<% if (theme.progressBar.on) { %>
+<% if (theme.progressBar.on === true) { %>
     <script src="<%- theme.CDN.pace_js %>"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
 <% } %>
