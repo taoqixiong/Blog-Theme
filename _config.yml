@@ -90,7 +90,7 @@ comment:
   ## false: 当点击评论条等区域时再加载评论模块
   ## false: load comment's section until u click/hover on the bar/icon
   show_count: false
-  ## 是否在主页文章标题旁显示评论数（Disqus）
+  ## 是否在主页文章标题旁显示评论数（仅支持 Disqus 和 Disqus_Proxy ）
   ## Add comment count after article title
 
 disqus: 
