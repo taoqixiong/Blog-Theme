@@ -85,7 +85,7 @@ subnav:
 comment:
   use: disqus
   ## 选一个作为网站评论系统，其他保持禁用。
-  ## 可选的评论系统：disqus, youyan, disqus_proxy, valine。
+  ## 可选的评论系统：disqus, youyan, disqus_proxy, valine, livere。
   preload_comment: true
   ## false: 当点击评论条等区域时再加载评论模块
   ## false: load comment's section until u click/hover on the bar/icon
@@ -134,6 +134,10 @@ youyan:
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
+
+livere:
+  livere_uid:
+  # livere_uid 为来必力的 UID
 
 
 # >>> Style Customisation 样式自定义 <<<

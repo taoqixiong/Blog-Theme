@@ -80,13 +80,18 @@
       timeout: theme.disqus_proxy.timeout,
     }) %>
   <% } %>
-    <% if(theme.comment.use === 'valine') { %>
+  <% if(theme.comment.use === 'valine') { %>
     <%- partial('comments/valine', {
       app_id: theme.valine.app_id,
       app_key: theme.valine.app_key,
       notify: theme.valine.notify,
       verify: theme.valine.verify,
       placeholder: theme.valine.placeholder,
+    }) %>
+  <% } %>
+  <% if(theme.comment.use === 'livere') { %>
+    <%- partial('comments/livere', {
+      livere_uid: theme.livere.livere_uid
     }) %>
   <% } %>
 <% } %>
