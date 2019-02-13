@@ -53,7 +53,7 @@ define([], function(){
         var isEnterBtn = false;
         var isEnterTips = false;
 
-        $(".icon").bind("mouseenter", function(){
+        $(".icon1").bind("mouseenter", function(){
             isEnterBtn = true;
             Tips.show();
         }).bind("mouseleave", function(){
