@@ -1,19 +1,21 @@
 <section id="comments">
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 	<div id="comment" style="margin: 30px;"></div>
 	<script>
-		var valine = new Valine({
-            el: '#comment',
-            notify: '<%= notify %>', 
-            verify: '<%= verify %>', 
-            app_id: '<%= app_id %>',
-            app_key: '<%= app_key %>',
-            placeholder: '<%= placeholder %>',
-            path: '<%= page.permalink %>',
-            avatar_cdn:'https://gravatar.loli.net/avatar/',
-            pageSize: 10,
-        });
+		var loadComment = function(){
+			var valine = new Valine({
+      	      el: '#comment',
+    	        notify: '<%= notify %>', 
+				verify: '<%= verify %>', 
+				app_id: '<%= app_id %>',
+				app_key: '<%= app_key %>',
+				placeholder: '<%= placeholder %>',
+				path: '<%= page.permalink %>',
+				avatar_cdn:'https://gravatar.loli.net/avatar/',
+				pageSize: 10,
+			});
+		}
 	</script>
-    <%- partial('click2show') %>
+	<%- partial('click2show') %>
 </section>

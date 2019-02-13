@@ -87,7 +87,7 @@ comment:
   ## 选一个作为网站评论系统，其他保持禁用。
   ## 可选的评论系统：disqus, youyan, disqus_proxy, valine, livere。
   preload_comment: true
-  ## false: 当点击评论条等区域时再加载评论模块
+  ## false: 当点击评论条等区域时再加载评论模块（livere[来必力]暂不支持）
   ## false: load comment's section until u click/hover on the bar/icon
   show_count: false
   ## 是否在主页文章标题旁显示评论数（仅支持 Disqus 和 Disqus_Proxy ）
