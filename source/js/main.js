@@ -53,7 +53,7 @@ require([], function (){
         loadPC();
     }
 
-    resetTags = function(){
+    var resetTags = function(){
         var tags = $(".tagcloud a");
         for(var i = 0; i < tags.length; i++){
             var num = Math.floor(Math.random()*7);
